@@ -9,16 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-var questionNumber = 0
+    var questionNumber = 0
+    var score = 0
     var pickedAnswer: Bool = false
     var question = QuestionBank()
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var scoreLbl: UILabel!
     @IBOutlet weak var answeredQuestionLbl: UILabel!
-    @IBOutlet weak var progressBar: UIView!
+   
+    @IBOutlet weak var progressBar: UIProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextQuestion()
+  
+       updateUI()
         // Do any additional setup after loading the view.
     }
     
@@ -30,36 +33,53 @@ var questionNumber = 0
                 pickedAnswer = false
             }
         checkAnswer()
-        nextQuestion()
+        questionNumber = questionNumber + 1
+        updateUI()
         }
         
     
     func updateUI(){
-        
+    scoreLbl.text = "Score: \(score)"
+    answeredQuestionLbl.text = "\(questionNumber + 1)/13"
+    progressBar.frame.size.width = (view.frame.size.width/13) * CGFloat(questionNumber)
+        nextQuestion()
+    }
+    func checkAnswer(){
+        let firstAnswer = question.list[questionNumber].answer
+        if firstAnswer == pickedAnswer{
+            ProgressHUD.showSuccess("Correct")
+            ;
+            score = score + 1
+        }
+        else{
+            ProgressHUD.showError("Wrong")
+        }
     }
     
     func nextQuestion(){
-        questionNumber = questionNumber + 1
+     
         if questionNumber <= 12 {
-            let firstQuestion = question.list[questionNumber]
-            questionLbl.text = firstQuestion.questionText
+       
+            questionLbl.text = question.list[questionNumber].questionText
+            
         }
             else {
-            print("Quiz End")
-            restart()
+            let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over?", preferredStyle: .alert)
+            
+            let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { UIAlertAction in
+                self.restart()
+            })
+            
+            alert.addAction(restartAction)
+            
+            present(alert, animated: true, completion: nil)
         }
     }
-    func checkAnswer(){
-       let firstAnswer = question.list[questionNumber].answer
-        if firstAnswer == pickedAnswer{
-        print("correct")
-        }
-        else{
-            print("wrong")
-        }
-    }
+   
     func restart(){
         questionNumber = 0
+        score = 0
+        updateUI()
     }
     
     

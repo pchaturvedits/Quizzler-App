@@ -57,50 +57,48 @@
                                     <constraint firstAttribute="height" constant="30" id="L9M-hz-V6B"/>
                                 </constraints>
                             </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="hVr-2s-2ie">
+                                <rect key="frame" x="0.0" y="810" width="137" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="261" translatesAutoresizingMaskIntoConstraints="NO" id="9F3-ol-z6R">
-                                <rect key="frame" x="0.0" y="755" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="724" width="414" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X/13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrd-Ro-F5Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zT-GV-ehZ">
-                                        <rect key="frame" x="337.5" y="0.0" width="76.5" height="50"/>
+                                        <rect key="frame" x="337.5" y="0.0" width="76.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="2Nd-Ne-yAp"/>
+                                    <constraint firstAttribute="height" constant="30" id="glg-g1-nid"/>
                                 </constraints>
                             </stackView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="hVr-2s-2ie">
-                                <rect key="frame" x="0.0" y="810" width="414" height="2"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hVr-2s-2ie" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Rj-Nz-lVN"/>
+                            <constraint firstItem="9F3-ol-z6R" firstAttribute="top" secondItem="kft-hi-JsR" secondAttribute="bottom" constant="150" id="CCe-Iw-uOG"/>
                             <constraint firstItem="DeA-0C-FcZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JPu-Nk-poJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9F3-ol-z6R" secondAttribute="trailing" id="Jeu-RX-AeR"/>
                             <constraint firstItem="kft-hi-JsR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="RuD-af-aNb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hVr-2s-2ie" secondAttribute="bottom" constant="50" id="Ubc-YQ-pN3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DeA-0C-FcZ" secondAttribute="trailing" id="X9k-dt-uit"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kft-hi-JsR" secondAttribute="trailing" constant="50" id="dj9-kF-ViX"/>
-                            <constraint firstAttribute="trailing" secondItem="hVr-2s-2ie" secondAttribute="trailing" id="fRM-iB-rBf"/>
+                            <constraint firstItem="9F3-ol-z6R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eMP-Wa-CL1"/>
                             <constraint firstItem="DeA-0C-FcZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="gFr-5Y-Nbg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9F3-ol-z6R" secondAttribute="trailing" id="mB9-UD-Zsn"/>
                             <constraint firstItem="kft-hi-JsR" firstAttribute="top" secondItem="DeA-0C-FcZ" secondAttribute="bottom" constant="100" id="n9U-x3-J3y"/>
-                            <constraint firstItem="9F3-ol-z6R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qIr-QQ-vEt"/>
-                            <constraint firstItem="hVr-2s-2ie" firstAttribute="top" secondItem="9F3-ol-z6R" secondAttribute="bottom" constant="5" id="ytY-qV-97L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="answeredQuestionLbl" destination="rrd-Ro-F5Q" id="m5L-ki-MAV"/>
-                        <outlet property="progressBar" destination="8bC-Xf-vdC" id="GwG-jh-1Dn"/>
+                        <outlet property="progressBar" destination="hVr-2s-2ie" id="G2b-tx-9KE"/>
                         <outlet property="questionLbl" destination="DeA-0C-FcZ" id="D6l-Ea-1Kp"/>
                         <outlet property="scoreLbl" destination="4zT-GV-ehZ" id="nxu-au-6xb"/>
                     </connections>
